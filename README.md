@@ -4,8 +4,8 @@ This app should be able to do the following:
 
 * Render all character cards to the list. Each card should have a **toggle and an edit button** and the following information:
   * Student Name
-  * Student Role
-  * Student Patronus
+  * BONUS: Student Role
+  * BONUS: Student Patronus
 
 * The toggle button should toggle between adding and removing the card from your team
 

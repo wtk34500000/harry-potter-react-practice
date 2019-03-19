@@ -9,7 +9,7 @@ class CharacterCard extends React.Component {
         <p>{this.props.studentObj.role}</p>
         <p>{this.props.studentObj.patronus}</p>
         <button onClick={()=>this.props.handleToggle(this.props.studentObj)}>Toggle</button>
-        <button>Edit</button>
+        <button onClick={()=> this.props.handleEdit()}>Edit</button>
       </div>
   )}
 }

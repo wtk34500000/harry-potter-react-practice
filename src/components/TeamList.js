@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './CharacterCard';
+import Card from './Card';
 
 const TeamList = (props) => {
     const arrOfStudents = props.teamStudents.map(student => <Card key={student._id} studentObj={student} handleToggle={props.handleToggle}/>)

@@ -11,7 +11,8 @@ class App extends Component {
   state ={
     allStudents: [],
     teamStudents: [],
-    userInput: " "
+    userInput: " ",
+  
   }
 
   componentDidMount(){
@@ -27,6 +28,8 @@ class App extends Component {
         }
       )
   }
+
+
 
   handleAdd = (studentObj)=>{
     
@@ -53,6 +56,21 @@ class App extends Component {
     })
   }
 
+  handleSubmit=(newName, studentObj)=>{
+  
+    const newStudentArr = [...this.state.allStudents]
+    const foundStudent=newStudentArr.find(student => student._id === studentObj._id)
+    foundStudent.name=newName
+
+    this.setState({
+      allStudents: newStudentArr
+    })
+
+  }
+
+  
+
+
   filterArry = (arr)=>{
     if(this.state.userInput === " "){
       return arr
@@ -65,7 +83,7 @@ class App extends Component {
     return (
       <div id="character-container">
         <Filter handleFilter={this.handleFilter} userInput={this.state.userInput}/> 
-        <StudentContainer handleToggle={this.handleAdd} allStudents={this.filterArry(this.state.allStudents)}/> 
+        <StudentContainer onClick={this.state.onClick} handleSubmit={this.handleSubmit} handleToggle={this.handleAdd} allStudents={this.filterArry(this.state.allStudents)}/> 
         <TeamContainer handleToggle={this.handleRemove} teamStudents={this.filterArry(this.state.teamStudents)}/> 
       </div>
     )
